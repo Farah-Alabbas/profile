@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: hsl(218, 60%, 61%);
+    width: 1440px;
+    font-size: 18px;
+    font-family: sans-serif;
+
+
+
+
+}
+
+
+
+.ii {
+    border-radius: 60px;
+    position: relative;
+    top: -50;
+    left: 100;
+}
+
+.vec {
+    grid-area: vec;
+    background-color: antiquewhite;
+
+
+
+}
+
+.nam {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: space-around;
+    position: relative;
+    top: -30;
+
+    grid-area: nam;
+
+}
+
+.city {
+    grid-area: city;
+    position: relative;
+    top: -20;
+}
+
+.name {
+    font-weight: bolder;
+    grid-area: name;
+}
+
+.num {
+    grid-area: num;
+}
+
+.s {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "name num"
+        "city city";
+    grid-area: s;
+
+    border-bottom: 1px solid rgb(210, 209, 210);
+    column-gap: 30;
+
+}
+
+.details {
+
+    grid-area: details;
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+
+    background-color: antiquewhite;
+
+}
+
+.follower {
+
+    grid-area: follower;
+    background-color: antiquewhite;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+
+
+
+}
+
+table tr:first-of-type {
+    font-weight: bolder;
+}
+
+.img1 {
+
+    position: relative;
+    height: 410px;
+    width: 500px;
+    top: 30;
+    grid-area: img1;
+
+
+
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "im im im "
+        "s s s"
+        "follower follower follower";
+    position: absolute;
+    row-gap: 0;
+    column-gap: 0;
+    padding: 0;
+    margin: 0;
+    height: 300;
+    left: 500px;
+    top: 150px;
+    width: 306px;
+    border: none;
+    border-radius: 30px;
+}
+
+.im {
+    padding: 0;
+    margin: 0;
+    grid-area: im;
+    border-radius: 10px;
+    width: 306px;
+    height: 120px;
+}
