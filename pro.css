@@ -1,3 +1,10 @@
+/*you could merge these styles
+*,
+html,
+body {
+    shared styles goes here
+}
+*/
 * {
     box-sizing: border-box;
 }
@@ -5,13 +12,10 @@
 body {
 
     background-color: hsl(218, 60%, 61%);
+    /* Always set a max width not just width */
     width: 1440px;
     font-size: 18px;
-    font-family: sans-serif;
-
-
-
-
+    font-family: 'Inter','Rubik',sans-serif;
 }
 
 
@@ -19,6 +23,7 @@ body {
 .ii {
     border-radius: 60px;
     position: relative;
+    /* These numbers are pretty big you should use the flex and grid property to align items and use the relative and the top,right,bottom,left properties with thej smallest numbers you could because it will create problems later specialyy on different screens*/
     top: -50;
     left: 101;
 }
@@ -26,9 +31,6 @@ body {
 .vec {
     grid-area: vec;
     background-color: antiquewhite;
-
-
-
 }
 
 .nam {
@@ -38,9 +40,7 @@ body {
     justify-content: space-around;
     position: relative;
     top: -30;
-
     grid-area: nam;
-
 }
 
 .city {
@@ -75,8 +75,13 @@ body {
     display: block;
     justify-content: center;
     text-align: center;
-
-
+    /* You used this background color three times in a single file
+        you could make a class like this:display:
+        .bg-antiquewhite {
+            background-color: antiquewhite;
+        }
+        and just add the class to the elements that you want the background on it 
+    */
     background-color: antiquewhite;
 
 }
@@ -92,7 +97,7 @@ body {
 
 
 }
-
+/* Nice (will using the table is wrong but still nice)*/
 table tr:first-of-type {
     font-weight: bolder;
 }
@@ -112,10 +117,15 @@ table tr:first-of-type {
 .profile {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    /* I love that you are using the grid-template-areas but you don't need it here you see when you set 
+        grid-template-columns: 1fr 1fr 1fr you already made the container split into 3 columns so even without the grid-template-areas
+        the grid-template-areas will become usefull in other places but here it adds complexity to the code 
+    */
     grid-template-areas: "im im im "
         "s s s"
         "follower follower follower";
     position: absolute;
+    /* row-gap doesn't do anything here */
     row-gap: 0;
     column-gap: 0;
     padding: 0;
@@ -135,4 +145,113 @@ table tr:first-of-type {
     border-radius: 10px;
     width: 306px;
     height: 120px;
+}
+
+/*general things
+    * You are using static units for width and height and that is not very responsive you should use rem or em or percentage and set the max-width property in pixels to avoid problems in big screens.
+*/
+
+
+
+
+
+/* My Version
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: hsl(218, 60%, 61%);
+  max-width: 1440px;
+  font-size: 18px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  grid-template-areas:
+    "im im im"
+    "name num"
+    "city city"
+    "follower follower follower";
+  position: absolute;
+  top: 150px;
+  left: 500px;
+  width: 306px;
+  height: 300px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.im {
+  grid-area: im;
+  border-radius: 10px;
+  width: 100%;
+  height: 120px;
+}
+
+.name {
+  font-weight: bolder;
+  grid-area: name;
+}
+
+.num {
+  grid-area: num;
+}
+
+.city {
+  grid-area: city;
+}
+
+.follower {
+  grid-area: follower;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+.table-heading {
+  font-weight: bolder;
+}
+
+.img1 {
+  position: relative;
+  width: 500px;
+  height: 410px;
+  top: 30px;
+}
+
+.details {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+.bg-antiquewhite {
+  background-color: antiquewhite;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "im"
+      "name"
+      "num"
+      "city"
+      "follower";
+  }
+
+  .img1 {
+    width: 100%;
+    height: auto;
+  }
 }
