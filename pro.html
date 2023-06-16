@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- Never but an image without a container it will create porblems later -->
     <img src="images/bg-pattern-top.svg" class="img1">
 
 
@@ -17,10 +18,16 @@
         <section class="head-profile"><img src="images/bg-pattern-card.svg" alt="" class="im">
 
         </section>
+        <!-- class names should represent what they do 
+         naming a CSS class s or ii  could cause confusion later
+        -->
         <section class="s">
             <div class="vec"><img src="images/image-victor.jpg" class="ii"></div>
             <div class="details">
                 <div class="nam">
+                    <!-- The two divs here could be paragraps or span or even a ul with two li inside of it
+                        the div is used to wrap elements also using p and span and other elements will help with accessibility and make your site SEO friendly (like you -_-)
+                    -->
                     <div class="name">Victor Crest</div>
                     <div class="num">26</div>
                 </div>
@@ -28,7 +35,9 @@
             </div>
         </section>
 
-
+        <!-- The table is used wrong here there is no nee for a table because you used the table here for styling purposes which is wrong
+            You could use a div with display flex and the three lements will be aligned or you could use grid with gridtemplateColumns set to repeate(3, 1fr) which will create three columns and still be responsive
+        -->
         <table class="follower">
             <tbody>
                 <tr class="first">
@@ -51,3 +60,54 @@
 </body>
 
 </html>
+
+
+
+<!-- My version 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Card</title>
+    <link rel="stylesheet" href="pro.css">
+    <link href="https://fonts.google.com/specimen/Kumbh+Sans3/">
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/bg-pattern-top.svg" class="img1">
+
+        <section class="head-profile">
+            <img src="images/bg-pattern-card.svg" alt="" class="im">
+        </section>
+
+        <section class="details">
+            <div class="nam">
+                <p class="name">Victor Crest</p>
+                <p class="num">26</p>
+            </div>
+            <p class="city">London</p>
+        </section>
+
+        <div class="follower">
+            <div class="table-heading">
+                <p>80k</p>
+                <p>801k</p>
+                <p>104k</p>
+            </div>
+            <div class="table-heading">
+                <p>Followers</p>
+                <p>Likes</p>
+                <p>Photos</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+-->
